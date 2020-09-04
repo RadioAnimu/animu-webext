@@ -1,0 +1,35 @@
+ {
+
+  "manifest_version": 2,
+  
+  "name": "animu.com.br",
+  "author": "animu.com.br",
+  "version": "1.0",
+  "description": "Extensão para ouvires a Animu enquanto navegas a web!",
+
+  "icons": {
+    "16": "img/16.png",
+    "24": "img/24.png",
+    "128": "img/128.png"
+  },
+
+  "browser_action": {
+    "default_icon": "img/24.png",
+    "default_title": "animu.com.br",
+    "default_popup": "index.html"
+  },
+  
+  "permissions": [
+		"storage",
+		"webRequest",
+		"webRequestBlocking",
+		"notifications",
+    "https://*.animu.com.br:8021/stream"  
+],
+
+"background": {
+        "persistent" : true,
+		"scripts": ["js/bg.js"]
+}
+
+}
