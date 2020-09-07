@@ -85,12 +85,46 @@ function getstreaminfo() {
     document.getElementById("ca").src = coverart;
     document.getElementById("imgsource").href = coverart;
   };
+
   showinfo.send();
   showinfo.onload = function () {
     var showjson = showinfo.response;
-    console.log(showjson);
-  };
-}
+    var locutor = showjson.locutor;
+    var show = showjson.programa;
+    if ((locutor = "Haruka")) {
+      document.getElementById("onairshow").innerText =
+        "NO AR: NON-STOP - DJ Haruka";
+    } else {
+      // TODO: Uma maneira mais efficiente para tratar dos freetimes, mas isto funciona por agora...
+      switch (locutor + "|" + show) {
+        case "Dj Zapp|Jiyuu Jikan":
+          document.getElementById("onairshow").innerText =
+            "NO AR: Free Time - DJ Zapp";
+          break;
+        case "Dj LL|Jiyuu Jikan":
+          document.getElementById("onairshow").innerText =
+            "NO AR: Free Time - DJ LL!";
+          break;
+        case "FELIPERIN|Jiyuu Jikan":
+          document.getElementById("onairshow").innerText =
+            "NO AR: Free Time - DJ FELIPERIN";
+          break;
+        case "DJ Dolode|Jiyuu Jikan":
+          document.getElementById("onairshow").innerText =
+            "NO AR: Free Time - DJ Dolode";
+          break;
+        case "Afonso|Jiyuu Jikan":
+          document.getElementById("onairshow").innerText =
+            "NO AR: Free Time - DJ Afonso";
+          break;
+        case "FELIPERIN|Season Break":
+          document.getElementById("onairshow").innerText =
+            "NO AR: Season Break - DJ FELIPERIN";
+          break;
+      }
+    }
+  }
+};
 
 getstreaminfo();
 setInterval(getstreaminfo, 15000);
