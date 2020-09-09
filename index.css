@@ -3,14 +3,12 @@
   src: url(fonts/notosansregular.ttf);
 }
 
-
-html {min-height: 230px; 
-  min-width: 500px;}
-
 body {
   background-color: #24005B; 
   background-image:url(img/background.png);
-  font-family: notosans;}
+  font-family: notosans;
+  min-height: 230px; 
+  min-width: 485px;}
 
 a{
   transition: 0.3s;}
@@ -25,6 +23,7 @@ a:hover{
  color:white}
 
 #playstop-button{color: #8CDB38;
+  
   position: absolute; 
   top: 170px; 
   user-select: none; 
@@ -33,14 +32,9 @@ a:hover{
 #playstop-button:hover
 {color:white}
 
-/*
-#play-controls{
-  position: absolute; 
-  bottom: 50px}
-*/
 #vol-control{
   position: absolute; 
-  top: 160px;
+  top: 165px;
   left: 40px;
 }
 
@@ -53,17 +47,16 @@ a:hover{
 #animetitle{color:white;
   position:absolute;
   font-size: 12px;
-  top: 20px;
+  top: 5px;
   left: 160px
  }
 
 #onairshow{
   color:white; 
   font-size: 12px;
-  position:absolute;3
-  top: 20px;
+  position:absolute;
   bottom: 10px;
-  right: 325px
+  right: 325px;
    }
 
 #links 
@@ -71,7 +64,9 @@ a:hover{
   position:fixed; 
   bottom: 0;  
   left: 400px;
-  font-size: 20px;}
+  font-size: 20px;
+}
+
 
 input[type=range] {
   
@@ -80,9 +75,11 @@ input[type=range] {
   -webkit-appearance: none;
  
 }
+
 input[type=range]:focus {
   outline: none;
 }
+
 input[type=range]::-webkit-slider-runnable-track {
   background: #4813f5;
   border: 0.7px solid #562425;
@@ -121,6 +118,7 @@ input[type=range]::-moz-range-thumb {
   border-radius: 2px;
   cursor: pointer;
 }
+
 input[type=range]::-ms-track {
   background: transparent;
   border-color: transparent;
@@ -130,7 +128,6 @@ input[type=range]::-ms-track {
   height: 12.6px;
   cursor: pointer;
 }
-
 
 .noselect {
   -webkit-user-select: none;  

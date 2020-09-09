@@ -77,7 +77,7 @@ function getstreaminfo() {
   trackinfo.onerror = function () {
     document.getElementById("songtitle").innerText = "Um erro aconteceu, ou o nosso servidor foi abaixo ou estas disconectado da internet";
     document.getElementById("animetitle").innerText = "OH MY GOD!";
-    document.getElementById("ca").src = "img/nocover.png";
+    document.getElementById("coverart").src = "img/nocover.png";
     document.getElementById("imgsource").href = "about:blank";
   }
   trackinfo.onload = function () {
@@ -88,14 +88,14 @@ function getstreaminfo() {
     var animeget = rawsong.substr(rawsong.indexOf("|") + 1);
     document.getElementById("songtitle").innerText = songtitleget;
     document.getElementById("animetitle").innerText = animeget;
-    document.getElementById("ca").src = coverart;
+    document.getElementById("coverart").src = coverart;
     document.getElementById("imgsource").href = coverart;
   };
 
   showinfo.send();
   showinfo.onerror = function () {
     document.getElementById("onairshow").innerText = "NO AR: não sei - dj NaN";
-  }
+  };
   showinfo.onload = function () {
     var showjson = showinfo.response;
     var locutor = showjson.locutor;
