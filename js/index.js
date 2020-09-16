@@ -75,11 +75,12 @@ function getstreaminfo() {
   showinfo.responseType = "json";
   trackinfo.send();
   trackinfo.onerror = function () {
-    document.getElementById("songtitle").innerText = "Um erro aconteceu, ou o nosso servidor foi abaixo ou estas disconectado da internet";
+    document.getElementById("songtitle").innerText =
+      "Um erro aconteceu, ou o nosso servidor foi abaixo ou estas disconectado da internet";
     document.getElementById("animetitle").innerText = "OH MY GOD!";
     document.getElementById("coverart").src = "img/nocover.png";
     document.getElementById("imgsource").href = "about:blank";
-  }
+  };
   trackinfo.onload = function () {
     var radiojson = trackinfo.response;
     var rawsong = radiojson.data[0].rawmeta;
@@ -100,7 +101,7 @@ function getstreaminfo() {
     var showjson = showinfo.response;
     var locutor = showjson.locutor;
     var show = showjson.programa;
-    if ((locutor = "Haruka")) {
+    if (locutor == "Haruka") {
       document.getElementById("onairshow").innerText =
         "NO AR: NON-STOP - DJ Haruka";
     } else {
@@ -132,8 +133,8 @@ function getstreaminfo() {
           break;
       }
     }
-  }
-};
+  };
+}
 
 getstreaminfo();
 setInterval(getstreaminfo, 15000);
