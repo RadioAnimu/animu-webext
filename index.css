@@ -13,14 +13,17 @@ body {
 
 a {
   transition: 0.3s;
+  text-decoration: underline;
 }
 
 a:link {
   color: #8cdb38;
+  text-decoration: underline;
 }
 
 a:visited {
   color: #8cdb38;
+  text-decoration: underline;
 }
 
 a:hover {
@@ -62,9 +65,9 @@ a:hover {
   left: 160px;
 }
 
-#coverart{
-  width:150px;
-  height:150px;
+#coverart {
+  width: 150px;
+  height: 150px;
   object-fit: scale-down;
 }
 
@@ -74,7 +77,7 @@ a:hover {
   position: absolute;
   bottom: 33px;
   right: 153px;
-  color: #7CDD1A;
+  color: #7cdd1a;
   font-weight: bold;
 }
 
@@ -84,6 +87,11 @@ a:hover {
   bottom: 0;
   left: 289px;
   font-size: 20px;
+}
+
+::selection {
+  color: #7cdd1a;
+  background: #24005b;
 }
 
 input[type="range"] {
@@ -144,8 +152,7 @@ input[type="range"]::-ms-track {
   cursor: pointer;
 }
 
-.noselect {
-  -webkit-user-select: none;
-  -moz-user-select: none;
+
+.noselect{
   user-select: none;
 }

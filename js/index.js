@@ -104,32 +104,39 @@ function getstreaminfo() {
     if (locutor == "Haruka") {
       document.getElementById("onairshow").innerText =
         "NO AR: NON-STOP - DJ Haruka";
+      document.getElementById("pedidoslink").href = "https://www.animu.com.br/pedidos/";
     } else {
       // TODO: Uma maneira mais efficiente para tratar dos freetimes, mas isto funciona por agora...
       switch (locutor + "|" + show) {
         case "Dj Zapp|Jiyuu Jikan":
           document.getElementById("onairshow").innerText =
             "NO AR: Free Time - DJ Zapp";
+          document.getElementById("pedidoslink").href = "https://www.animu.com.br/#fazerpedidoaovivo";
           break;
         case "Dj LL|Jiyuu Jikan":
           document.getElementById("onairshow").innerText =
             "NO AR: Free Time - DJ LL!";
+            document.getElementById("pedidoslink").href = "https://www.animu.com.br/#fazerpedidoaovivo";
           break;
         case "FELIPERIN|Jiyuu Jikan":
           document.getElementById("onairshow").innerText =
             "NO AR: Free Time - DJ FELIPERIN";
+            document.getElementById("pedidoslink").href = "https://www.animu.com.br/#fazerpedidoaovivo";
           break;
         case "DJ Dolode|Jiyuu Jikan":
           document.getElementById("onairshow").innerText =
             "NO AR: Free Time - DJ Dolode";
+            document.getElementById("pedidoslink").href = "https://www.animu.com.br/#fazerpedidoaovivo";
           break;
         case "Afonso|Jiyuu Jikan":
           document.getElementById("onairshow").innerText =
             "NO AR: Free Time - DJ Afonso";
+            document.getElementById("pedidoslink").href = "https://www.animu.com.br/#fazerpedidoaovivo";
           break;
         case "FELIPERIN|Season Break":
           document.getElementById("onairshow").innerText =
             "NO AR: Season Break - DJ FELIPERIN";
+            document.getElementById("pedidoslink").href = "https://www.animu.com.br/#fazerpedidoaovivo";
           break;
       }
     }
