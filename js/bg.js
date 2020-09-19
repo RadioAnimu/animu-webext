@@ -1,6 +1,10 @@
 var radioaudio = new Audio();
 var radiolink = "https://cast.animu.com.br:8021/stream?";
-radioaudio.volume = localStorage.getItem("animuwebext-lastvolbar") / 100;
+
+chrome.storage.local.get(["animuwebext_lastvolbar"], function(vol) {
+  window.radioaudio.volume = vol.animuwebext_lastvolbar / 100;
+});
+
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.action == "animuwebext-play") {
     radioaudio.src = radiolink + "?" + Math.random();

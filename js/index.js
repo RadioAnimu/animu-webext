@@ -50,7 +50,8 @@ var volbar = document.getElementById("vol-control");
 
 function checkvol() {
   var number = volbar.value;
-  localStorage.setItem("animuwebext-lastvolbar", number);
+  chrome.storage.sync.set({"animuwebext_lastvolbar": number});
+  
   chrome.runtime.sendMessage({
     action: number,
   });
@@ -145,7 +146,9 @@ function getstreaminfo() {
 
 getstreaminfo();
 setInterval(getstreaminfo, 15000);
-volbar.value = localStorage.getItem("animuwebext-lastvolbar");
+
+chrome.storage.sync.get(["animuwebext_lastvolbar"] , function(numero) { volbar.value = numero.animuwebext_lastvolbar})
+
 chrome.runtime.sendMessage({
   action: "animuwebext-areyouplaying",
 });
