@@ -97,6 +97,7 @@ a:hover {
 input[type="range"] {
   margin: 13.2px 0;
   background-color: transparent;
+  width: 25%;
   -webkit-appearance: none;
 }
 
