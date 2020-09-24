@@ -50,8 +50,8 @@ var volbar = document.getElementById("vol-control");
 
 function checkvol() {
   var number = volbar.value;
-  chrome.storage.sync.set({"animuwebext_lastvolbar": number});
-  
+  chrome.storage.sync.set({ "animuwebext_lastvolbar": number });
+
   chrome.runtime.sendMessage({
     action: number,
   });
@@ -105,39 +105,51 @@ function getstreaminfo() {
     if (locutor == "Haruka") {
       document.getElementById("onairshow").innerText =
         "NO AR: NON-STOP - DJ Haruka";
-      document.getElementById("pedidoslink").href = "https://www.animu.com.br/pedidos/";
+      document.getElementById("pedidoslink").href =
+        "https://www.animu.com.br/pedidos/";
     } else {
       // TODO: Uma maneira mais efficiente para tratar dos freetimes, mas isto funciona por agora...
       switch (locutor + "|" + show) {
         case "Dj Zapp|Jiyuu Jikan":
           document.getElementById("onairshow").innerText =
             "NO AR: Free Time - DJ Zapp";
-          document.getElementById("pedidoslink").href = "https://www.animu.com.br/#fazerpedidoaovivo";
+          document.getElementById("pedidoslink").href =
+            "https://www.animu.com.br/#fazerpedidoaovivo";
           break;
         case "Dj LL|Jiyuu Jikan":
           document.getElementById("onairshow").innerText =
             "NO AR: Free Time - DJ LL!";
-            document.getElementById("pedidoslink").href = "https://www.animu.com.br/#fazerpedidoaovivo";
+          document.getElementById("pedidoslink").href =
+            "https://www.animu.com.br/#fazerpedidoaovivo";
           break;
         case "FELIPERIN|Jiyuu Jikan":
           document.getElementById("onairshow").innerText =
             "NO AR: Free Time - DJ FELIPERIN";
-            document.getElementById("pedidoslink").href = "https://www.animu.com.br/#fazerpedidoaovivo";
+          document.getElementById("pedidoslink").href =
+            "https://www.animu.com.br/#fazerpedidoaovivo";
           break;
         case "DJ Dolode|Jiyuu Jikan":
           document.getElementById("onairshow").innerText =
             "NO AR: Free Time - DJ Dolode";
-            document.getElementById("pedidoslink").href = "https://www.animu.com.br/#fazerpedidoaovivo";
+          document.getElementById("pedidoslink").href =
+            "https://www.animu.com.br/#fazerpedidoaovivo";
           break;
         case "Afonso|Jiyuu Jikan":
           document.getElementById("onairshow").innerText =
             "NO AR: Free Time - DJ Afonso";
-            document.getElementById("pedidoslink").href = "https://www.animu.com.br/#fazerpedidoaovivo";
+          document.getElementById("pedidoslink").href =
+            "https://www.animu.com.br/#fazerpedidoaovivo";
           break;
         case "FELIPERIN|Season Break":
           document.getElementById("onairshow").innerText =
             "NO AR: Season Break - DJ FELIPERIN";
-            document.getElementById("pedidoslink").href = "https://www.animu.com.br/#fazerpedidoaovivo";
+          document.getElementById("pedidoslink").href =
+            "https://www.animu.com.br/#fazerpedidoaovivo";
+          break;
+        case "Manutenção|Manutenção":
+          document.getElementById("onairshow").innerText = "EM MANUTENÇÃO";
+          document.getElementById("pedidoslink").href =
+            "https://www.animu.com.br/";
           break;
       }
     }
@@ -147,7 +159,9 @@ function getstreaminfo() {
 getstreaminfo();
 setInterval(getstreaminfo, 15000);
 
-chrome.storage.sync.get(["animuwebext_lastvolbar"] , function(numero) { volbar.value = numero.animuwebext_lastvolbar})
+chrome.storage.sync.get(["animuwebext_lastvolbar"], function (numero) {
+  volbar.value = numero.animuwebext_lastvolbar;
+});
 
 chrome.runtime.sendMessage({
   action: "animuwebext-areyouplaying",

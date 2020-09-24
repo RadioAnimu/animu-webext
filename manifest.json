@@ -30,6 +30,13 @@
 "background": {
         "persistent" : true,
 		"scripts": ["js/bg.js"]
+},
+
+
+"applications": {
+  "gecko": {
+    "id": "tossa@disroot.org"
+  }
 }
 
 }
