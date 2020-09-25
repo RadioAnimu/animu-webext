@@ -2,9 +2,9 @@
 
   "manifest_version": 2,
   
-  "name": "animu.com.br",
-  "author": "animu.com.br",
-  "version": "1.0",
+  "name": "Animu.com.br",
+  "author": "bossatossa",
+  "version": "1.0.0",
   "description": "Extensão para ouvires a Animu enquanto navegas a web!",
 
   "icons": {
@@ -21,10 +21,7 @@
   
   "permissions": [
 		"storage",
-		"webRequest",
-		"notifications",
-    "https://*.animu.com.br:8021/stream",
-    "https://www.animu.com.br/teste/locutor1.php"  
+		"webRequest" 
 ],
 
 "background": {
