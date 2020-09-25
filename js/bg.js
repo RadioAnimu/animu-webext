@@ -10,7 +10,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     radioaudio.src = radiolink + "?" + Math.random();
     radioaudio.load;
     radioaudio.play();
-    console.log(radioaudio.paused);
   } else if (request.action == "animuwebext-pause") {
     radioaudio.pause();
     radioaudio.currentTime = 0;

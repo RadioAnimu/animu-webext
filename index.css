@@ -3,11 +3,17 @@
   src: url(fonts/notosansregular.ttf);
 }
 
+html {
+	height: 210px;
+	overflow: hidden;
+}
+
+
 body {
   background-color: #24005b;
   background-image: url(img/background.png);
   font-family: notosans;
-  min-height: 210px;
+  height: 100%;
   min-width: 485px;
 }
 
@@ -76,7 +82,7 @@ a:hover {
   font-size: 12px;
   position: absolute;
   bottom: 33px;
-  right: 153px;
+  right: 10px;
   color: #7cdd1a;
   font-weight: bold;
 }
@@ -156,4 +162,30 @@ input[type="range"]::-ms-track {
 
 .noselect{
   user-select: none;
+}
+
+
+@media screen and (max-width: 350px){
+
+  html {
+    height: 270px;
+    overflow: hidden;
+  }
+
+  #links {
+    bottom: 0;
+    left: 0;
+    font-size: 15px;
+  }
+
+  #onairshow {
+    font-size: 12px;
+    bottom: 30px;
+    left: 0px;
+  }
+
+  #animulogo{
+    height: 15px;
+    width: 15px;
+  }
 }
