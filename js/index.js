@@ -92,6 +92,13 @@ function getstreaminfo() {
     document.getElementById("animetitle").innerText = animeget;
     document.getElementById("coverart").src = coverart;
     document.getElementById("imgsource").href = coverart;
+    
+    if(songtitleget.length >= 50 ){
+      var songtitlecut = songtitleget.split('-')[1];
+      document.getElementById("songtitle").innerText = songtitlecut;
+      } else {
+        document.getElementById("songtitle").innerText = songtitleget;
+      }
   };
 
   showinfo.send();
@@ -104,7 +111,7 @@ function getstreaminfo() {
     var show = showjson.programa;
     if (locutor == "Haruka") {
       document.getElementById("onairshow").innerText =
-        "NO AR: NON-STOP - DJ Haruka";
+        "NO AR: Animu NON-STOP com DJ Haruka";
       document.getElementById("pedidoslink").href =
         "https://www.animu.com.br/pedidos/";
     } else {
@@ -112,37 +119,37 @@ function getstreaminfo() {
       switch (locutor + "|" + show) {
         case "Dj Zapp|Jiyuu Jikan":
           document.getElementById("onairshow").innerText =
-            "NO AR: Free Time - DJ Zapp";
+            "NO AR: Free Time com DJ Zapp";
           document.getElementById("pedidoslink").href =
             "https://www.animu.com.br/#fazerpedidoaovivo";
           break;
         case "Dj LL|Jiyuu Jikan":
           document.getElementById("onairshow").innerText =
-            "NO AR: Free Time - DJ LL!";
+            "NO AR: Free Time com DJ LL!";
           document.getElementById("pedidoslink").href =
             "https://www.animu.com.br/#fazerpedidoaovivo";
           break;
         case "FELIPERIN|Jiyuu Jikan":
           document.getElementById("onairshow").innerText =
-            "NO AR: Free Time - DJ FELIPERIN";
+            "NO AR: Free Time com DJ FELIPERIN";
           document.getElementById("pedidoslink").href =
             "https://www.animu.com.br/#fazerpedidoaovivo";
           break;
         case "DJ Dolode|Jiyuu Jikan":
           document.getElementById("onairshow").innerText =
-            "NO AR: Free Time - DJ Dolode";
+            "NO AR: Free Time com DJ Dolode";
           document.getElementById("pedidoslink").href =
             "https://www.animu.com.br/#fazerpedidoaovivo";
           break;
         case "Afonso|Jiyuu Jikan":
           document.getElementById("onairshow").innerText =
-            "NO AR: Free Time - DJ Afonso";
+            "NO AR: Free Time com DJ Afonso";
           document.getElementById("pedidoslink").href =
             "https://www.animu.com.br/#fazerpedidoaovivo";
           break;
         case "FELIPERIN|Season Break":
           document.getElementById("onairshow").innerText =
-            "NO AR: Season Break - DJ FELIPERIN";
+            "NO AR: Season Break com DJ FELIPERIN";
           document.getElementById("pedidoslink").href =
             "https://www.animu.com.br/#fazerpedidoaovivo";
           break;
