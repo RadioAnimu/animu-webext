@@ -66,7 +66,7 @@ function getstreaminfo() {
   var nocacheplz = Math.random();
   trackinfo.open(
     "GET",
-    "https://cast.animu.com.br:2199/rpc/animufm/streaminfo.get?" + nocacheplz
+    "https://cast.animu.com.br:8021/status.json?" + nocacheplz
   );
   showinfo.open(
     "GET",
@@ -84,21 +84,14 @@ function getstreaminfo() {
   };
   trackinfo.onload = function () {
     var radiojson = trackinfo.response;
-    var rawsong = radiojson.data[0].rawmeta;
-    var coverart = radiojson.data[0].track.imageurl;
+    var rawsong = radiojson.rawtitle;
+    var coverart = radiojson.track.cover;
     var songtitleget = rawsong.substring(0, rawsong.indexOf("|"));
     var animeget = rawsong.substr(rawsong.indexOf("|") + 1);
     document.getElementById("songtitle").innerText = songtitleget;
     document.getElementById("animetitle").innerText = animeget;
     document.getElementById("coverart").src = coverart;
     document.getElementById("imgsource").href = coverart;
-    
-    if(songtitleget.length >= 50 ){
-      var songtitlecut = songtitleget.split('-')[1];
-      document.getElementById("songtitle").innerText = songtitlecut;
-      } else {
-        document.getElementById("songtitle").innerText = songtitleget;
-      }
   };
 
   showinfo.send();
