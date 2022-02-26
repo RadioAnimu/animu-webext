@@ -18,6 +18,11 @@
     "default_title": "animu.com.br",
     "default_popup": "index.html"
   },
+
+  "options_ui": {
+  "page": "options.html",
+  "browser_style": true
+},
   
   "permissions": [
 		"storage",
