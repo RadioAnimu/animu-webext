@@ -66,7 +66,7 @@ function getstreaminfo() {
   var nocacheplz = Math.random();
   trackinfo.open(
     "GET",
-    "https://cast.animu.com.br:8021/status.json?" + nocacheplz
+    "https://api.animu.com.br/?" + nocacheplz
   );
   showinfo.open(
     "GET",
@@ -85,7 +85,7 @@ function getstreaminfo() {
   trackinfo.onload = function () {
     var radiojson = trackinfo.response;
     var rawsong = radiojson.rawtitle;
-    var coverart = radiojson.track.cover;
+    var coverart = radiojson.track.artworks.medium;
     var songtitleget = rawsong.substring(0, rawsong.indexOf("|"));
     var animeget = rawsong.substr(rawsong.indexOf("|") + 1);
     document.getElementById("songtitle").innerText = songtitleget;
@@ -108,50 +108,37 @@ function getstreaminfo() {
       document.getElementById("pedidoslink").href =
         "https://www.animu.com.br/pedidos/";
     } else {
-      // TODO: Uma maneira mais efficiente para tratar dos freetimes, mas isto funciona por agora...
-      switch (locutor + "|" + show) {
-        case "Dj Zapp|Jiyuu Jikan":
-          document.getElementById("onairshow").innerText =
-            "NO AR: Free Time com DJ Zapp";
-          document.getElementById("pedidoslink").href =
-            "https://www.animu.com.br/#fazerpedidoaovivo";
-          break;
-        case "Dj LL|Jiyuu Jikan":
-          document.getElementById("onairshow").innerText =
-            "NO AR: Free Time com DJ LL!";
-          document.getElementById("pedidoslink").href =
-            "https://www.animu.com.br/#fazerpedidoaovivo";
-          break;
-        case "FELIPERIN|Jiyuu Jikan":
-          document.getElementById("onairshow").innerText =
-            "NO AR: Free Time com DJ FELIPERIN";
-          document.getElementById("pedidoslink").href =
-            "https://www.animu.com.br/#fazerpedidoaovivo";
-          break;
-        case "DJ Dolode|Jiyuu Jikan":
-          document.getElementById("onairshow").innerText =
-            "NO AR: Free Time com DJ Dolode";
-          document.getElementById("pedidoslink").href =
-            "https://www.animu.com.br/#fazerpedidoaovivo";
-          break;
-        case "Afonso|Jiyuu Jikan":
-          document.getElementById("onairshow").innerText =
-            "NO AR: Free Time com DJ Afonso";
-          document.getElementById("pedidoslink").href =
-            "https://www.animu.com.br/#fazerpedidoaovivo";
-          break;
-        case "FELIPERIN|Season Break":
-          document.getElementById("onairshow").innerText =
-            "NO AR: Season Break com DJ FELIPERIN";
-          document.getElementById("pedidoslink").href =
-            "https://www.animu.com.br/#fazerpedidoaovivo";
-          break;
-        case "Manutenção|Manutenção":
-          document.getElementById("onairshow").innerText = "EM MANUTENÇÃO";
-          document.getElementById("pedidoslink").href =
-            "https://www.animu.com.br/";
-          break;
-      }
+     switch (show) {
+      case "Non-Stop":
+        document.getElementById("onairshow").innerText =
+        "Animu NON-STOP com DJ Haruka";
+        break;
+      case "AnimuSong":
+        document.getElementById("onairshow").innerText =
+          "AnimuSong com a DJ Haruka Yuki";
+        break;
+      case "Jiyuu Jikan":
+        document.getElementById("onairshow").innerText =
+          "Jiyuu Jikan com " + locutor;
+        break;
+      case "Animu Plus":
+        document.getElementById("onairshow").innerText =
+          "Animu Plus com " + locutor + " e Ouvintes!";
+        break;
+      case "Manutenção":
+        document.getElementById("onairshow").innerText =
+          "Manutenção com DJ Paciência e DJ Técnica";
+        break;
+      case "Olimpíadas na Rádio":
+        document.getElementById("onairshow").innerText =
+          "Olimpíadas na Rádio";
+        window.onairname = "Olimpiadas no Rádio";
+        break;
+      default:
+        document.getElementById("onairshow").innerText =
+        show + " com " + locutor;
+        break;
+    }
     }
   };
 }
