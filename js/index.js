@@ -34,18 +34,6 @@ function pauseradio() {
   playstop.addEventListener("click", playradio);
 }
 
-function volumedown() {
-  chrome.runtime.sendMessage({
-    action: "animuwebext-volume-down",
-  });
-}
-
-function volumeup() {
-  chrome.runtime.sendMessage({
-    action: "animuwebext-volume-up",
-  });
-}
-
 var volbar = document.getElementById("vol-control");
 
 function checkvol() {
