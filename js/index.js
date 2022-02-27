@@ -73,13 +73,35 @@ function getstreaminfo() {
   trackinfo.onload = function () {
     var radiojson = trackinfo.response;
     var rawsong = radiojson.rawtitle;
-    var coverart = radiojson.track.artworks.medium;
+    var tiny_coverart = radiojson.track.artworks.tiny;
+    var medium_coverart = radiojson.track.artworks.medium;
+    var large_coverart = radiojson.track.artworks.large;
     var songtitleget = rawsong.substring(0, rawsong.indexOf("|"));
     var animeget = rawsong.substr(rawsong.indexOf("|") + 1);
     document.getElementById("songtitle").innerText = songtitleget;
     document.getElementById("animetitle").innerText = animeget;
-    document.getElementById("coverart").src = coverart;
-    document.getElementById("imgsource").href = coverart;
+
+   chrome.storage.local.get(["animuwebext_coverart_quality"], function (quality) {
+  switch(quality.animuwebext_coverart_quality){
+    default:
+      chrome.storage.local.set({ "animuwebext_coverart_quality": 'medium' });
+      document.getElementById("coverart").src = medium_coverart;
+      document.getElementById("imgsource").href = medium_coverart;
+      break;
+    case "high":
+     document.getElementById("coverart").src = large_coverart;
+     document.getElementById("imgsource").href = large_coverart;
+      break;
+    case "medium":
+     document.getElementById("coverart").src = medium_coverart;
+     document.getElementById("imgsource").href = medium_coverart;
+      break;
+    case "low":
+     document.getElementById("coverart").src = tiny_coverart;
+     document.getElementById("imgsource").href = tiny_coverart;
+      break;
+      }
+})
   };
 
   showinfo.send();

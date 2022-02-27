@@ -31,7 +31,12 @@ switch (quality) {
 }
 
 }
-var qualitySelect  = document.getElementById("kbSelect");
-qualitySelect.addEventListener("change",(event) => {
+var streamQualitySelect  = document.getElementById("kbSelect");
+streamQualitySelect.addEventListener("change",(event) => {
 changeStreamQuality(event.target.value);
+});
+
+var coverArtQualitySelect  = document.getElementById("caSelect");
+coverArtQualitySelect.addEventListener("change",(event) => {
+changeCoverArtQuality(event.target.value);
 });
