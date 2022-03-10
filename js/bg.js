@@ -11,10 +11,10 @@ chrome.storage.local.get(["animuwebext_stream_quality"], function (quality) {
       window.radiolink = "https://cast.animu.com.br:9006/stream?";
       break;
     case "medium":
-      window.radiolink = "https://cast.animu.com.br:9015/stream?";
+      window.radiolink = "https://cast.animu.com.br:9014/stream?";
       break;
     case "low":
-      window.radiolink = "https://cast.animu.com.br:9025/stream?"
+      window.radiolink = "https://cast.animu.com.br:9024/stream?"
       break;
       }
 })
