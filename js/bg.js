@@ -5,16 +5,16 @@ chrome.storage.local.get(["animuwebext_stream_quality"], function (quality) {
   switch(quality.animuwebext_stream_quality){
     default:
       chrome.storage.local.set({ "animuwebext_stream_quality": 'high' });
-      window.radiolink = "https://cast.animu.com.br:9006/stream?";
+      window.radiolink = "https://cast.animu.com.br:9079/stream";
       break;
     case "high":
-      window.radiolink = "https://cast.animu.com.br:9006/stream?";
+      window.radiolink = "https://cast.animu.com.br:9079/stream";
       break;
     case "medium":
-      window.radiolink = "https://cast.animu.com.br:9014/stream?";
+      window.radiolink = "https://cast.animu.com.br:9089/stream";
       break;
     case "low":
-      window.radiolink = "https://cast.animu.com.br:9024/stream?"
+      window.radiolink = "https://cast.animu.com.br:9069/stream"
       break;
       }
 })
