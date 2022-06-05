@@ -4,7 +4,7 @@
   
   "name": "Animu.com.br",
   "author": "bossatossa",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Extensão para ouvires a Animu enquanto navegas a web!",
 
   "icons": {
@@ -36,7 +36,7 @@
 
 
 "applications": {
-  "gecko": {
+    "gecko": {
     "id": "tossa@disroot.org_animuwebext"
   }
 }
